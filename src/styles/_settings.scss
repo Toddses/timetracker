@@ -1,0 +1,36 @@
+/**
+ * color map
+ * names determined using tool located at: http://chir.ag/projects/name-that-color
+ */
+$colors: (
+  "white": #fff,
+  "black": #000,
+  "alizarincrimson": #e2231a,
+  "emperor": #525252,
+  "cerulean": #00b5e2,
+  "mineshaft": #282828,
+  "dustygray": #999999,
+  "silverchalice": #afafaf,
+  "wildsand": #f4f4f4,
+);
+
+/* font settings */
+$primary-font: "Helvetica Neue";
+
+$p: 1em; // 16px
+$h1: 2em; // 32px
+$h2: 1.5em; // 24px
+$h3: 1.25em; // 20px
+$h4: 1.125em; // 18px
+$small: 0.875em; // 14px
+
+/* properties */
+
+/* responsiveness */
+$breakpoints: (
+  desktop-lg: 1400px,
+  desktop-sm: 1100px,
+  tablet: 960px,
+  mobile-lg: 690px,
+  mobile-sm: 520px,
+);

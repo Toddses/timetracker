@@ -1,0 +1,117 @@
+/* =Typography
+----------------------------------------------- */
+
+// pretty up everything
+div,
+p,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+button,
+svg text,
+input,
+textarea,
+select {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $primary-font;
+}
+
+p,
+li,
+a {
+  font-size: $p;
+  font-weight: 500;
+}
+h1 {
+  font-size: $h1;
+  font-weight: 700;
+}
+h2 {
+  font-size: $h2;
+  font-weight: 700;
+}
+h3 {
+  font-size: $h3;
+  font-weight: 600;
+}
+h4 {
+  font-size: $h4;
+  font-weight: 400;
+}
+small {
+  font-size: $small;
+  font-weight: 700;
+}
+
+/* set up the core element typography */
+
+p,
+h1,
+h2,
+h3,
+h4,
+small {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:active {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25em;
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
+// text styling helper classes
+.w-light {
+  font-weight: 300;
+}
+.w-book {
+  font-weight: 400;
+}
+.w-medium {
+  font-weight: 500;
+}
+.w-bold {
+  font-weight: 600;
+}
+.w-xbold {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+@import "styles/resources";
+
+.timer-input {
+  @include flex(align-center);
+
+  span {
+    padding: 0.5em 1em;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &.is-invalid {
+      border-color: color("alizarincrimson");
+    }
+  }
+
+  input {
+    width: 100px;
+  }
+
+  .actions {
+    > div {
+      @include size(1.5em);
+      cursor: pointer;
+    }
+  }
+}

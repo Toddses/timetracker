@@ -1,0 +1,42 @@
+html,
+body {
+  @include size(100%);
+}
+
+body {
+  > div {
+    @include size(100%);
+  }
+}
+
+// lock in images to the viewport width site-wide
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.background {
+  @include position(absolute, 0);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -2;
+
+  &.contain {
+    background-size: contain;
+  }
+}
+
+// remove the additional border highlighting
+*:focus {
+  outline: none;
+}
+
+// form styling
+input {
+  padding: 0.5em 1em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: inherit;
+}

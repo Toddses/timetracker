@@ -1,0 +1,64 @@
+@import "styles/resources";
+
+#app-container {
+  @include flex(column);
+  min-height: 100vh;
+  padding: 4em;
+  background-color: color("wildsand");
+
+  .header {
+    @include flex(align-center);
+    margin-bottom: 2em;
+  }
+
+  h1 {
+    flex: 1 0 auto;
+  }
+
+  .header-button {
+    @include flex(align-center justify-center);
+    padding: 0.25em 1em;
+    border: 1px solid color("black");
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+      color: color("white");
+      background-color: color("black");
+    }
+  }
+}
+
+#entries-container {
+  @include flex(column);
+
+  > div {
+    @include flex(align-center);
+    padding: 1em 2em;
+    border-bottom: 1px solid color("silverchalice");
+  }
+
+  > div:nth-child(2n) {
+    background-color: white;
+  }
+
+  .remove {
+    @include size(1.5em);
+    margin-right: 1em;
+    cursor: pointer;
+
+    svg {
+      fill: color("alizarincrimson");
+    }
+  }
+
+  .total-container {
+    padding-left: 650px;
+    border-bottom: 0;
+
+    > div:first-child {
+      margin-right: 2em;
+    }
+  }
+}

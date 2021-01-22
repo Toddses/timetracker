@@ -1,0 +1,19 @@
+/**
+*    ___   ___    _  _  ___ _____   __  __  ___  ___ ___ _____   __
+*   |   \ / _ \  | \| |/ _ \_   _| |  \/  |/ _ \|   \_ _| __\ \ / /
+*   | |) | (_) | | .` | (_) || |   | |\/| | (_) | |) | || _| \ V /
+*   |___/ \___/  |_|\_|\___/ |_|   |_|  |_|\___/|___/___|_|   |_|
+*
+*   This file is generated with SASS and will be overwritten
+*/
+
+// reset/normalize/sanitize
+@import "sanitize";
+
+// non CSS generating resources
+@import "resources";
+
+// styles
+@import "global/animations";
+@import "global/general";
+@import "global/typography";

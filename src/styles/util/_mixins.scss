@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/// Sets transition length, properties, and easing for a more uniform
+/// transition state across the entire app.
+///
+/// @argument {string} $properties
+///   A string of properties that should be transitioned, defaults
+///   to all.
+///
+/// @argument {string} $timing
+///   Timing for transition. You can pass in `normal`, `short`, or
+///   `long`, which correspond with the appropriate
+///   `$global-transition` variable
+///
+/// @argument {string} $easing
+///   Transition easing, defaults to `ease-out`.
+///
+/// @example scss
+///   .element {
+///     @include transition(border transform, long);
+///   }
+///   .element2 {
+///     @include transition();
+///   }
+///
+///   // CSS Output
+///   .element {
+///     transition: border 0.5s ease-out, transform 0.5s ease-out;
+///   }
+///   .element2 {
+///     transition: all 0.3s ease-out;
+///   }
+
+$global-transition: 0.3s !default;
+$global-transition-slow: 0.5s !default;
+$global-transition-fast: 0.1s !default;
+
+@mixin transition($properties: all, $timing: normal, $easing: ease-out) {
+  $time: $timing;
+  $timer: $global-transition;
+
+  @if (str-index($time, normal)) {
+    $timer: $global-transition;
+  } @else if(str-index($time, fast)) {
+    $timer: $global-transition-fast;
+  } @else if(str-index($time, slow)) {
+    $timer: $global-transition-slow;
+  }
+
+  @if (str-index($properties, " ")) {
+    transition: unquote(
+      str-replace($properties, " ", " #{$timer} #{$easing}, ")
+    );
+  } @else {
+    transition: unquote($properties) $timer $easing;
+  }
+
+  transition: unquote($properties) $timer $easing;
+}

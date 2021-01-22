@@ -1,0 +1,27 @@
+// get a color from the color map
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    $color: map-get($colors, $color);
+  } @else {
+    @if type-of($color) != color {
+      @error "Color name: `#{$color}` not found.";
+    }
+  }
+  @return $color;
+}
+
+/// Replace `$search` with `$replace` in `$string`
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
