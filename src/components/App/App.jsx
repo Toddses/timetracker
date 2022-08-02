@@ -23,6 +23,7 @@ type Props = {
  */
 const App = (props: Props) => {
   const dispatch = useDispatch();
+  const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
   const handleCreateTimer = useCallback(
     () =>
@@ -33,7 +34,7 @@ const App = (props: Props) => {
             Math.random().toString(36).substring(2, 15),
           project: 'proj',
           description: 'desc',
-          day: 'mon',
+          day: weekdays[new Date().getDay()],
           timeInSeconds: 0,
           highlight: true,
         })
